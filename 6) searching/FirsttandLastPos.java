@@ -1,10 +1,12 @@
 //https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 public class FirsttandLastPos {
         public int[] searchRange(int[] nums, int target) {
-            if(nums.length == 0) return new int[]{-1,-1};
-            int s = binarySearch(nums, target, true);
-            int e = binarySearch(nums, target, false);
-            return new int[] {s,e};
+            int[] ans = {-1,-1};
+            ans[0] = binarySearch(nums, target, true);
+            if(ans[0] != -1){
+                ans[1] = binarySearch(nums, target, false);
+            }
+            return ans;
         }
         public int binarySearch(int[] nums, int target, boolean startIndex){
             int s = 0;
