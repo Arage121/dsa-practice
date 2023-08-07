@@ -1,6 +1,6 @@
 //https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 public class searchRotatedArrII {
-        public boolean search(int[] nums, int target) {
+    public static boolean search(int[] nums, int target) {
             // ArrayList<Integer> l = new ArrayList<>();
             // for(int num:nums){
             //     l.add(num);
