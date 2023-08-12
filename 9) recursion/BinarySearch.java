@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/binary-search/
 public class BinarySearch {
         public int search(int[] nums, int target) {
             if (nums == null || nums.length == 0) {
