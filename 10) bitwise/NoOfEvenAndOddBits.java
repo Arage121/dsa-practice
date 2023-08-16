@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/number-of-even-and-odd-bits/
 import java.util.*;
 public class NoOfEvenAndOddBits {
         public int[] evenOddBit(int n) {
