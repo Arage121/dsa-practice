@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/missing-number/
 public class MissingNumber {
     public int missingNumber(int[] nums) {
         int missing = nums.length; // Initialize missing as n
