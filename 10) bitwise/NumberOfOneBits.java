@@ -7,5 +7,14 @@ public class NumberOfOneBits {
             n >>>= 1; // if not there it will remove and in it's place another left value comes and this goes on
         }
         return count;
+        /*
+        Another way
+        int count = 0;
+        while(n!=0){
+        count++; // debug this only then u can understand this code
+        n = n&(n-1);
+       }
+       return count;
+         */
     }
 }
