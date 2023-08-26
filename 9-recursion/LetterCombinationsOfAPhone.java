@@ -2,35 +2,30 @@
 import java.util.*;
 public class LetterCombinationsOfAPhone {
     public List<String> letterCombinations(String D) {
-        ArrayList<String> ans = new ArrayList<>();
-        char[][] c = {
-                {}, {}, {'a','b','c'}, {'d','e','f'}, {'g','h','i'},
-                {'j','k','l'}, {'m','n','o'}, {'p','q','r','s'}, {'t','u','v'}, {'w','x','y','z'}
-        };
-
-        if (D.isEmpty()) {
-            return ans;
+        if(D.length()==0){
+            ArrayList<String> str = new ArrayList<>();
+            return str;
         }
-
-        int[] arr = new int[D.length()];
-        for (int i = 0; i < D.length(); i++) {
-            arr[i] = D.charAt(i) - '0';
-        }
-
-        multiplyChar(ans, c, arr, "", 0);
-
-        return ans;
+        return letters("",D);
     }
 
-    private void multiplyChar(List<String> ans, char[][] c, int[] arr, String current, int index) {
-        if (index == arr.length) {
-            ans.add(current);
-            return;
+    public ArrayList<String> letters(String p, String up){
+        if(up.isEmpty()){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
         }
-
-        char[] chars = c[arr[index]];
-        for (char ch : chars) {
-            multiplyChar(ans, c, arr, current + ch, index + 1);
+        int digit = up.charAt(0)-'0';
+        int i=(digit - 2) * 3;
+        if( digit > 7) i+=1;
+        int len=i + 3;
+        if( digit == 7 || digit == 9) len+=1;
+        ArrayList<String> ans = new ArrayList<>();
+        for(;i< len; i++)
+        {
+            char ch= (char) ('a' + i);
+            ans.addAll(letters(p + ch, up.substring(1)));
         }
+        return ans;
     }
 }
