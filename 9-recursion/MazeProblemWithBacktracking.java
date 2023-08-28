@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MazeProblemWithBacktracking { // important
     public static void main(String[] args) {
@@ -8,7 +9,9 @@ public class MazeProblemWithBacktracking { // important
                {true, true, true}
        };
 
-        findPathsAllDirectionsBacktrack("", maze, 0, 0);
+        int[][] path = new int[maze.length][maze[0].length];
+//        findPathsAllDirectionsBacktrack("", maze, 0, 0);
+        findPathsBacktrackAndPrintThem("", maze,  0, 0, path, 1);
     }
 
     public static void findPathsAllDirectionsBacktrack(String p, boolean[][] maze, int r, int c){
@@ -40,7 +43,7 @@ public class MazeProblemWithBacktracking { // important
             findPathsAllDirectionsBacktrack(p+"D", maze, r+1, c);
         }
 
-        if(c < maze[0].length-1){ // left
+        if(c < maze[0].length-1){ // right
             findPathsAllDirectionsBacktrack(p+"R", maze, r, c+1);
         }
 
@@ -55,6 +58,51 @@ public class MazeProblemWithBacktracking { // important
         // this line is where the function will be over
         // so before the function gets removed, also remove the changes that were made by that function/current recursion call
         maze[r][c] = true;
+
+        // and these two lines where we change element to false, and back to true at that current recursion call ending
+        // causes this code to become backtracking
+    }
+
+    public static void findPathsBacktrackAndPrintThem(String p, boolean[][] maze, int r, int c, int[][] path, int step){
+        // in this function we will simply add the steps in path array and this path array will consists of all the paths that has taken for one path
+        if(r == maze.length-1 && c == maze[0].length-1){
+            path[r][c] = step;
+            for(int[] arr: path){
+                System.out.println(Arrays.toString(arr));
+            }
+            System.out.println(p);
+            System.out.println();
+            return;
+        }
+
+        if(!maze[r][c]){ // if element at this position is false means there is hurdle present so we can't go on that path, then we stop and go back
+            return;
+        }
+
+        // we are considering this element/block/area in our path
+        maze[r][c] = false; // as it is already visited for that current recursion call
+        path[r][c] = step;
+
+        if(r < maze.length-1){ // down
+            findPathsBacktrackAndPrintThem(p+"D", maze, r+1, c, path, step+1);
+        }
+
+        if(c < maze[0].length-1){ // right
+            findPathsBacktrackAndPrintThem( p+"R", maze, r, c+1, path, step+1);
+        }
+
+        if(r > 0){ // up
+            findPathsBacktrackAndPrintThem( p+"U", maze, r-1, c, path, step+1);
+        }
+
+        if(c > 0){ // left
+            findPathsBacktrackAndPrintThem( p+"L", maze, r, c-1, path, step+1);
+        }
+
+        // this line is where the function will be over
+        // so before the function gets removed, also remove the changes that were made by that function/current recursion call
+        maze[r][c] = true;
+        path[r][c] = 0; // reverting back values of path arr
 
         // and these two lines where we change element to false, and back to true at that current recursion call ending
         // causes this code to become backtracking
