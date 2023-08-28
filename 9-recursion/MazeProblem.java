@@ -3,11 +3,17 @@ import java.util.ArrayList;
 public class MazeProblem {
     // you have to print the number of ways in which the element will reach the target position in 2/2 matrix
     public static void main(String[] args) {
-        int[][] arr = {{1,2,3},{4,5,6},{7,8,9}};
-        System.out.println(findNoOfPaths(0, 0)); // at the end we are reaching 9 element position, and it's printing the no. of ways that we can take to get there
-        // you can only go either right or down
-        System.out.println(findPaths("", 0, 0));
-        System.out.println(findAllPaths("", 0, 0));
+//        int[][] arr = {{1,2,3},{4,5,6},{7,8,9}};
+//        System.out.println(findNoOfPaths(0, 0)); // at the end we are reaching 9 element position, and it's printing the no. of ways that we can take to get there
+//        // you can only go either right or down
+//        System.out.println(findPaths("", 0, 0));
+//        System.out.println(findAllPaths("", 0, 0));
+        boolean[][] nohurd = {
+                {true, true, true},
+                {true, false, true}, // here false is a hurdle
+                {true, true, true}
+        };
+        findPathsWithHurdles("", nohurd, 0, 0);
     }
 
     public static int findNoOfPaths(int r, int c){
@@ -52,5 +58,24 @@ public class MazeProblem {
             ans.addAll(findAllPaths("R"+p, r, c+1));
         }
         return ans;
+    }
+
+    public static void findPathsWithHurdles(String p, boolean[][] nohurdles, int r, int c){
+        if(r == nohurdles.length-1 && c == nohurdles[0].length-1){
+            System.out.println(p);
+            return;
+        }
+
+        if(!nohurdles[r][c]){ // if element at this position is false means there is hurdle present so we can't go on that path, then we stop and go back
+            return;
+        }
+
+        if(r < nohurdles.length-1){
+            findPathsWithHurdles(p+"D", nohurdles, r+1, c);
+        }
+
+        if(c < nohurdles[0].length-1){
+            findPathsWithHurdles(p+"R", nohurdles, r, c+1);
+        }
     }
 }
