@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 public class FindthefirstoccurenceinaString {
         public int strStr(String haystack, String needle) { // sliding window approach, understand properly
             int hLen = haystack.length();
