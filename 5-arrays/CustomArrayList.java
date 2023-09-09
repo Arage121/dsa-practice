@@ -6,7 +6,7 @@ public class CustomArrayList { // making our own arraylist
     private static int DEFAULT_SIZE = 10;
     private int size = 0;
 
-    private CustomArrayList(){ //constructor
+    public CustomArrayList(){ //constructor
         this.data = new int[DEFAULT_SIZE];
     }
 
@@ -43,7 +43,7 @@ public class CustomArrayList { // making our own arraylist
     }
 
     public int remove(){
-        int removed = data[size--];
+        int removed = data[--size];
         return removed;
     }
 
