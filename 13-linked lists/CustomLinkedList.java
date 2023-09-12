@@ -8,6 +8,23 @@ public class CustomLinkedList {
         this.size = 0;
     }
 
+    public void print(){
+        Node temp = head;
+        while(temp!= null){
+            System.out.print(temp.val+" -> ");
+            temp = temp.next;
+        }
+        System.out.println("end");
+    }
+
+    public void add(int val){
+        if(head == null){
+            head = new Node(val);
+        }
+        Node curr = new Node(val);
+        head.next = curr;
+    }
+
     public void insertFirst(int val){
         Node node = new Node(val);
         node.next = head;
