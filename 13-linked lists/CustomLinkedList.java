@@ -35,6 +35,18 @@ public class CustomLinkedList {
         }
         size++;
     }
+
+    public void insertLast(int val){
+    if(tail == null){
+        insertFirst(val);
+        return; // exit from here don't execute the below lines
+    }
+    Node node = new Node(val);
+    tail.next = node;
+    tail = node;
+    size++;
+    }
+
     private class Node{
         private int val;
         private Node next;

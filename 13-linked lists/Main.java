@@ -5,6 +5,7 @@ public class Main {
         for(int i=1; i<10;i++){
             linkedList.insertFirst(i);
         }
+        linkedList.insertLast(99);
         linkedList.print();
     }
 }
