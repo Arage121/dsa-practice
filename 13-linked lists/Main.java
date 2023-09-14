@@ -7,5 +7,7 @@ public class Main {
         }
         linkedList.insertLast(99);
         linkedList.print();
+        linkedList.insertAtAnyIndex(134, 5);
+        linkedList.print();
     }
 }

@@ -47,6 +47,18 @@ public class CustomLinkedList {
     size++;
     }
 
+    public void insertAtAnyIndex(int val, int index){
+        if(index == 0) insertFirst(val);
+        if(index == size) insertLast(val);
+        Node temp = head;
+        for(int i=1;i<index;i++){
+            temp = temp.next; // it will go till index-1 position
+        }
+        Node node = new Node(val, temp.next); // we will create a new node with value val, and point to it to current temp.next node
+        temp.next = node; // and then update temp.next to our newly created node so that our value is inserted at the given index
+        size++;
+    }
+
     private class Node{
         private int val;
         private Node next;
