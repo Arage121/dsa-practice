@@ -36,6 +36,14 @@ public class CustomLinkedList {
         size++;
     }
 
+    public int deleteFirst(){
+        int val = head.val;
+        head = head.next;
+        if(head == null) tail = null;
+        size--;
+        return val;
+    }
+
     public void insertLast(int val){
     if(tail == null){
         insertFirst(val);
