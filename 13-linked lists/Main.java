@@ -9,7 +9,9 @@ public class Main {
         linkedList.print();
         linkedList.insertAtAnyIndex(134, 5);
         linkedList.print();
-        linkedList.deleteFirst();
+        linkedList.deleteLast();
+        linkedList.print();
+        linkedList.deleteAtAnyIndex(4);
         linkedList.print();
     }
 }
