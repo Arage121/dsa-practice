@@ -17,7 +17,7 @@ public class FindDuplicatesInArr {
         }
         if(list.isEmpty()) list.add(-1);
         return list;
-        /** another way
+        /** another way u have to understand this method
          * ArrayList<Integer> list = new ArrayList<>();
          *         for(int i=0;i<n;i++){
          *             arr[arr[i]%n] = arr[arr[i]%n] + n;
