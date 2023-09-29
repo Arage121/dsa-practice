@@ -5,6 +5,7 @@ class Node {
     Node(int value) {
         this.data = value;
     }
+
 }
 public class ReverseLinkedList {
     //Function to reverse a linked list.
