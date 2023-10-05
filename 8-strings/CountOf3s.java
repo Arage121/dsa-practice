@@ -1,3 +1,4 @@
+//https://www.codingninjas.com/studio/problem-of-the-day/
 public class CountOf3s {
     public static long countOf3(int x) {
         if(x < 3) return 0;
