@@ -13,7 +13,6 @@ public class CountOf3s {
         return count;
 
 //        if (x < 3) return 0; more optimized code
-//
 //        long count = 0;
 //        int powerOf10 = 1;
 //        int remainder = 0;
