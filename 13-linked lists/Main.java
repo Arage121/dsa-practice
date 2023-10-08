@@ -19,6 +19,7 @@ public class Main {
         dll.insertFirst(23);
         dll.insertFirst(231);
         dll.insertLast(2849);
+        dll.insert(20, 100);
         dll.display();
     }
 }
