@@ -14,12 +14,22 @@ public class Main {
 //        linkedList.deleteAtAnyIndex(4);
 //        linkedList.print();
 
-        CustomDoublyLinkedList dll = new CustomDoublyLinkedList();
-        dll.insertFirst(20);
-        dll.insertFirst(23);
-        dll.insertFirst(231);
-        dll.insertLast(2849);
-        dll.insert(20, 100);
-        dll.display();
+//        CustomDoublyLinkedList dll = new CustomDoublyLinkedList();
+//        dll.insertFirst(20);
+//        dll.insertFirst(23);
+//        dll.insertFirst(231);
+//        dll.insertLast(2849);
+//        dll.insert(20, 100);
+//        dll.display();
+
+          CustomCircularLinkedList cll = new CustomCircularLinkedList();
+          cll.insert(23);
+          cll.insert(231);
+          cll.insert(2552);
+          cll.insert(214123);
+          cll.display();
+          System.out.println();
+          cll.delete(2552);
+          cll.display();
     }
 }
