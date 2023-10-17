@@ -1,6 +1,9 @@
 //https://leetcode.com/problems/max-area-of-island/
 public class MaxAreaOfIsland {
-    public int maxAreaOfIsland(int[][] grid) {
+    public static void main(String[] args) {
+
+    }
+    public static int maxAreaOfIsland(int[][] grid) {
         int n = grid.length;
         int m = grid[0].length;
         boolean visited[][] = new boolean[n][m];
@@ -16,7 +19,7 @@ public class MaxAreaOfIsland {
         return max;
     }
 
-    public int findArea(int[][] grid, boolean[][] visited, int i, int j, int n, int m) {
+    public static int findArea(int[][] grid, boolean[][] visited, int i, int j, int n, int m) {
         if (i < 0 || j < 0 || i >= n || j >= m || grid[i][j] == 0 || visited[i][j]) {
             return 0;
         }
