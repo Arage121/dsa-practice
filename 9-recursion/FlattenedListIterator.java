@@ -20,7 +20,7 @@ public class FlattenedListIterator {
 
     public class NestedIterator implements Iterator<Integer> {
         private List<Integer> flattenedList;
-        private Iterator<Integer> iterator;
+        private Iterator<Integer> iterator; 
 
         public NestedIterator(List<NestedInteger> nestedList) {
             flattenedList = new ArrayList<>();
