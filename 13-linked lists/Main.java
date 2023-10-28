@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 // to run our customlinkedlist class as linked list and use it's functions
 public class Main {
     public static void main(String[] args) {
