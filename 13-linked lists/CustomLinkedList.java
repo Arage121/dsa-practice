@@ -122,4 +122,79 @@ public class CustomLinkedList {
             this.next = next;
         }
     }
+
+    public void bubbleSort(){
+        bubbleSort(size-1, 0);
+    }
+
+    private void bubbleSort(int row, int col){
+        if(row == 0) return;
+
+        if(col < row){
+            Node first = get(col);
+            Node second = get(col+1);
+            if(first.val > second.val){
+                //swap
+                if(first == head){
+                    head = second;
+                    first.next = second.next;
+                    second.next = first;
+                }else if(second == tail){
+                    Node prev = get(col-1);
+                    prev.next = second;
+                    tail = first;
+                    first.next = null;
+                    second.next = tail;
+                }else{
+                    Node prev = get(col-1);
+                    prev.next = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+            }
+            bubbleSort(row, col+1);
+        }else{
+            bubbleSort(row-1, 0);
+        }
+    }
+
+    //reverse using recursion
+    public void reverseRec(Node node){
+        if(node == tail){
+            head = tail;
+            return;
+        }
+
+        reverseRec(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
+    //reverse using iterative
+    public Node reverse(){
+        Node curr = head;
+        Node prev = null;
+        while(curr!=null){
+            Node newNext = curr.next;
+            curr.next = prev;
+
+            //move forward
+            prev = curr;
+            curr = newNext;
+        }
+        head = prev;
+        return head;
+    }
+
+    public static void main(String[] args) {
+        CustomLinkedList c = new CustomLinkedList();
+        for(int i=1; i<10;i++){
+            c.insertFirst(i);
+        }
+        c.bubbleSort();
+        c.print();
+        c.reverse();
+        c.print();
+    }
 }

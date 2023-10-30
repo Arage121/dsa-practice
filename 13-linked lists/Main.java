@@ -17,6 +17,8 @@ public class Main {
         linkedList.print();
         linkedList.insertRec(2143421, 5);
         linkedList.print();
+        linkedList.bubbleSort();
+        linkedList.print();
 
 //        CustomDoublyLinkedList dll = new CustomDoublyLinkedList();
 //        dll.insertFirst(20);
