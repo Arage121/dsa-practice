@@ -4,8 +4,7 @@ public class MoveAllZeroesToEnd {
 
         for(int i=0;i<n;i++){
             if(arr[i]!=0){
-                arr[nonZeroCount++] = arr[i]; // here arr[nonZeroCount++] = arr[i] basically means same as arr[nonZeroCount] = arr[i], and in next line
-                                                                                                           // nonZeroCount++
+                arr[nonZeroCount++] = arr[i]; // here arr[nonZeroCount++] = arr[i] basically means same as arr[nonZeroCount] = arr[i], and in next line// nonZeroCount++
             }
         }
 
