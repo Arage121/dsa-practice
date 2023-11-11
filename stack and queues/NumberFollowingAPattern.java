@@ -1,5 +1,8 @@
 import java.util.*;
 public class NumberFollowingAPattern {
+    public static void main(String[] args) {
+        System.out.println(printMinNumberForPattern("DDIIDDD"));
+    }
     static String printMinNumberForPattern(String S){ // understand this one properly
         Stack<Integer> st = new Stack<>();
         StringBuilder sb = new StringBuilder();
@@ -12,8 +15,8 @@ public class NumberFollowingAPattern {
                 while(!st.empty()) sb.append(st.pop());
             }
         }
-        st.push(num++);
-        while(st.size() > 0) sb.append(st.pop());
+        st.push(num);
+        while(!st.empty()) sb.append(st.pop());
 
         return sb.toString();
     }
