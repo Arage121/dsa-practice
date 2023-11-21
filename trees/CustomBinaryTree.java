@@ -46,10 +46,30 @@ public class CustomBinaryTree {
         display(root, "");
     }
 
-    public void display(Node node, String indent){
+    private void display(Node node, String indent){
         if(node == null) return;
         System.out.println(indent + node.data);
         display(node.left, indent+"\t");
         display(node.right, indent+"\t");
+    }
+
+    public void prettyDisplay(){
+        prettyDisplay(root, 0);
+    }
+
+    private void prettyDisplay(Node node, int level){
+        if(node == null) return;
+        prettyDisplay(node.right, level+1); // first printing right of the node
+
+        if(level != 0){
+            for(int i=0;i<level-1;i++){
+                System.out.print("|\t\t");
+            }
+            System.out.println("---->"+node.data); // printing the right and left according to their levels
+        }else{
+            System.out.println(node.data); // root node at level=0
+        }
+
+        prettyDisplay(node.left, level+1);
     }
 }

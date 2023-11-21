@@ -6,5 +6,6 @@ public class CBTMain {
         Scanner sc = new Scanner(System.in);
         tree.populate(sc);
         tree.display();
+        tree.prettyDisplay();
     }
 }
