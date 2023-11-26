@@ -13,10 +13,10 @@ public class ShuffleIntegers {
         }
         // now from these Ci values we will get Ai and Bi and put at their respective places like the question
         int j=n-1; // starting putting right values from last
-        while(j > 0){
-            arr[j] = arr[mid-1]/x; //after devision of Ci/x the quotient will be Bi that will be put at last
-            arr[j-1] = arr[mid-1]%x; // after devision of Ci/x the remainder will be Ai that will be put at second last
+        for(int i=mid-1;i>=0;i--){
+            arr[j] = arr[i]/x; //after devision of Ci/x the quotient will be Bi that will be put at last
+            arr[j-1] = arr[i]%x; // after devision of Ci/x the remainder will be Ai that will be put at second last
             j -= 2; // now two arr values have filled that's why we will decrease the last pointer by 2
-            mid--; // and the middle pointer by 1(for proper Ci values respectively)
         }
+    }
 }
