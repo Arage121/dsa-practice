@@ -49,6 +49,28 @@ public class CustomBST { // binary search tree
         return node;
     }
 
+    public void populate(int[] nums){ // for unsorted arrays this will work fine
+        for(int i=0;i<nums.length;i++) {
+            this.insert(nums[i]);
+        }
+    }
+
+    public void sortedPopulate(int[] nums){  // but for sorted array if you perfom the normal populate method then it will become straight line right tree
+        // which is very bad in all terms that's why we will use this sortedPopulate method which will take the middle element from sorted array, and pick the
+        // left tree as elements before mid and for right tree elements after mid and this process will go for each recursion
+        sortedPopulate(nums, 0, nums.length);
+    }
+
+    private void sortedPopulate(int[] nums, int start, int end){
+        if(start >= end) return;
+        int mid = start+(end-start)/2;
+
+        this.insert(nums[mid]);
+
+        sortedPopulate(nums, 0, mid);
+        sortedPopulate(nums, mid+1, end);
+    }
+
     public boolean balanced(){
         return balanced(root);
     }

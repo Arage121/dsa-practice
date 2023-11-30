@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CBTMain {
@@ -9,11 +10,9 @@ public class CBTMain {
 //        tree.prettyDisplay();
 
           CustomBST bst = new CustomBST();
-          Scanner sc = new Scanner(System.in);
-          int n = sc.nextInt();
-          for(int i=0;i<n;i++) {
-              bst.insert(sc.nextInt());
-          }
+          int[] arr = {24, 1, 342, 12, 11,21};
+          Arrays.sort(arr);
+          bst.sortedPopulate(arr);
           bst.display();
     }
 }

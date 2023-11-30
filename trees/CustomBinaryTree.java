@@ -53,6 +53,40 @@ public class CustomBinaryTree {
         display(node.right, indent+"\t");
     }
 
+    public void preOrder(){ // Node, Left, Right order is preorder(used in mathematical expressions to solve them)
+        preOrder(root);
+    }
+
+    private void preOrder(Node node){
+        if(node == null) return;
+        System.out.println(node.data + " ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    public void inOrder(){ // Left, Node, Right order is inorder(used in bst to print them in sorted order)
+        inOrder(root);
+    }
+
+    private void inOrder(Node node){
+        if(node == null) return;
+        inOrder(node.left);
+        System.out.println(node.data + " ");
+        inOrder(node.right);
+
+    }
+
+    public void postOrder(){ // Left, Right, Node order is postorder(used in deletion of binary trees, because we have to delete first their children, then only the parent node)
+        postOrder(root);
+    }
+
+    private void postOrder(Node node){
+        if(node == null) return;
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.data + " ");
+    }
+
     public void prettyDisplay(){
         prettyDisplay(root, 0);
     }
