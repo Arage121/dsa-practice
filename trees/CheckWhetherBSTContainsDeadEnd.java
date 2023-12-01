@@ -1,3 +1,4 @@
+//https://www.geeksforgeeks.org/problems/check-whether-bst-contains-dead-end/1
 public class CheckWhetherBSTContainsDeadEnd {
     class Node {
         int data;
