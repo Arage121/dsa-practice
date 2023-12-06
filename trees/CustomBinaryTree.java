@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.util.*;
+
 
 public class CustomBinaryTree {
     private class Node{
@@ -13,6 +14,25 @@ public class CustomBinaryTree {
 
     public void CustomBinaryTree(){
 
+    }
+    ArrayList<Integer> arr = new ArrayList<>();
+    public List<List<Integer>> BFSTraversal(){
+        List<List<Integer>> result = new ArrayList<>();
+        if(root == null) return result;
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            int levelSize = queue.size();
+            List<Integer> arr = new ArrayList<>();
+            for(int i=0;i<levelSize;i++){
+                Node currNode = queue.poll();
+                arr.add(currNode.data);
+                if(currNode.left != null) queue.offer(currNode.left);
+                if(currNode.right != null) queue.offer(currNode.right);
+            }
+            result.add(arr);
+        }
+        return result;
     }
 
     public void populate(Scanner sc){

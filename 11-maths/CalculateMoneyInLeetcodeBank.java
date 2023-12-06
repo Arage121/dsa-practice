@@ -1,4 +1,4 @@
-//
+//https://leetcode.com/problems/calculate-money-in-leetcode-bank/
 public class CalculateMoneyInLeetcodeBank {
     public int totalMoney(int n) {
         int week_count = n / 7;
